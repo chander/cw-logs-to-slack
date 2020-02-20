@@ -7,12 +7,12 @@ send DEBUG output to one channel, and ERROR output to another.)
 
 ## App Architecture
 
-![App Architecture](https://github.com/chander/otg-cw-logs-to-slack/raw/master/images/cw-logs-to-slack.png)
+![App Architecture](https://github.com/chander/cw-logs-to-slack-multi/raw/master/images/cw-logs-to-slack.png)
 
 ## Installation Instructions
 
 1. [Create an AWS account](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html) if you do not already have one and login
-1. Go to the app's page on the [Serverless Application Repository](https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-west-2:444108974876:applications~otg-cw-logs-to-slack) and click "Deploy"
+1. Go to the app's page on the [Serverless Application Repository](https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-west-2:444108974876:applications~cw-logs-to-slack-multi) and click "Deploy"
 1. Provide the required app parameters (see parameter details below) and click "Deploy"
 
 ### Slack Url

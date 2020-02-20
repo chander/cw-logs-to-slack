@@ -3,7 +3,7 @@ Transform: AWS::Serverless-2016-10-31
 
 Metadata:
   AWS::ServerlessRepo::Application:
-    Name: otg-cw-logs-to-slack
+    Name: cw-logs-to-slack-multi
     Description: Filters CloudWatch logs and publishes them to Slack
     Author: Chander Ganesan
     SpdxLicenseId: MIT
@@ -11,11 +11,11 @@ Metadata:
     LicenseUrl: ./LICENSE
     ReadmeUrl: ./README.md
     Labels: [serverless,slack,CloudWatch,logs]
-    HomePageUrl: https://github.com/chander/otg-cw-logs-to-slack
+    HomePageUrl: https://github.com/chander/cw-logs-to-slack-multi
     # Update the semantic version and run sam publish to publish a new version of your app
     SemanticVersion: 1.0.2
     # best practice is to use git tags for each release and link to the version tag as your source code URL
-    SourceCodeUrl: https://github.com/chander/otg-cw-logs-to-slack/tree/1.0.2
+    SourceCodeUrl: https://github.com/chander/cw-logs-to-slack-multi/tree/1.0.2
 
 Parameters:
   LogLevel:
@@ -101,7 +101,7 @@ Resources:
     Type: AWS::Serverless::Application
     Properties:
       Location:
-        ApplicationId: arn:aws:serverlessrepo:us-west-2:444108974876:applications/otg-lambda-to-slack
+        ApplicationId: arn:aws:serverlessrepo:us-west-2:444108974876:applications/lambda-to-slack-multi
         SemanticVersion: 0.0.5
       Parameters: 
         # Log level for Lambda function logging, e.g., ERROR, INFO, DEBUG, etc
