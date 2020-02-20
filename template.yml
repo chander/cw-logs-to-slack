@@ -3,19 +3,19 @@ Transform: AWS::Serverless-2016-10-31
 
 Metadata:
   AWS::ServerlessRepo::Application:
-    Name: cw-logs-to-slack
+    Name: macnoms-cw-logs-to-slack
     Description: Filters CloudWatch logs and publishes them to Slack
-    Author: Keeton Hodgson/Chander Ganesan
+    Author: Keeton Hodgson
     SpdxLicenseId: MIT
     # paths are relative to .aws-sam/build directory
     LicenseUrl: ./LICENSE
     ReadmeUrl: ./README.md
     Labels: [serverless,slack,CloudWatch,logs]
-    HomePageUrl: https://github.com/keetonian/cw-logs-to-slack
+    HomePageUrl: https://github.com/chander/macnoms-cw-logs-to-slack
     # Update the semantic version and run sam publish to publish a new version of your app
-    SemanticVersion: 1.0.0
+    SemanticVersion: 1.0.1
     # best practice is to use git tags for each release and link to the version tag as your source code URL
-    SourceCodeUrl: https://github.com/chander/cw-logs-to-slack/tree/1.0.0
+    SourceCodeUrl: https://github.com/chander/macnoms-cw-logs-to-slack/tree/1.0.1
 
 Parameters:
   LogLevel:
@@ -32,131 +32,51 @@ Parameters:
     Description: Pattern for filtering log events
     Type: String
     Default: ERROR
-  SlackUrl1:
-    Description: Webhook URL for integration with Slack (using ContainsString1)
-    Type: String
-  ContainsString1:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl1 to be used.
-  SlackUrl2:
-    Description: Webhook URL for integration with Slack (using ContainsString2)
-    Type: String
-  ContainsString2:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl2 to be used.
-  SlackUrl3:
-    Description: Webhook URL for integration with Slack (using ContainsString3)
-    Type: String
-  ContainsString3:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl3 to be used.
-  SlackUrl4:
-    Description: Webhook URL for integration with Slack (using ContainsString4)
-    Type: String
-  ContainsString4:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl4 to be used.
-  SlackUrl5:
-    Description: Webhook URL for integration with Slack (using ContainsString5)
-    Type: String
-  ContainsString5:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl5 to be used.
-  SlackUrl6:
-    Description: Webhook URL for integration with Slack (using ContainsString6)
-    Type: String
-  ContainsString6:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl6 to be used.
-  SlackUrl7:
-    Description: Webhook URL for integration with Slack (using ContainsString7)
-    Type: String
-  ContainsString7:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl7 to be used.
-  SlackUrl8:
-    Description: Webhook URL for integration with Slack (using ContainsString8)
-    Type: String
-  ContainsString8:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl8 to be used.
-  SlackUrl9:
-    Description: Webhook URL for integration with Slack (using ContainsString9)
-    Type: String
-  ContainsString9:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl9 to be used.
-  SlackUrl10:
-    Description: Webhook URL for integration with Slack (using ContainsString10)
-    Type: String
-  ContainsString10:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl10 to be used.
-  SlackUrl11:
-    Description: Webhook URL for integration with Slack (using ContainsString11)
-    Type: String
-  ContainsString11:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl11 to be used.
-  SlackUrl12:
-    Description: Webhook URL for integration with Slack (using ContainsString12)
-    Type: String
-  ContainsString12:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl12 to be used.
-  SlackUrl13:
-    Description: Webhook URL for integration with Slack (using ContainsString13)
-    Type: String
-  ContainsString13:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl13 to be used.
-  SlackUrl14:
-    Description: Webhook URL for integration with Slack (using ContainsString14)
-    Type: String
-  ContainsString14:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl14 to be used.
-  SlackUrl15:
-    Description: Webhook URL for integration with Slack (using ContainsString15)
-    Type: String
-  ContainsString15:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl15 to be used.
-  SlackUrl16:
-    Description: Webhook URL for integration with Slack (using ContainsString16)
-    Type: String
-  ContainsString16:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl16 to be used.
-  SlackUrl17:
-    Description: Webhook URL for integration with Slack (using ContainsString17)
-    Type: String
-  ContainsString17:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl17 to be used.
-  SlackUrl18:
-    Description: Webhook URL for integration with Slack (using ContainsString18)
-    Type: String
-  ContainsString18:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl18 to be used.
-  SlackUrl19:
-    Description: Webhook URL for integration with Slack (using ContainsString19)
-    Type: String
-  ContainsString19:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl19 to be used.
-  SlackUrl20:
-    Description: Webhook URL for integration with Slack (using ContainsString20)
-    Type: String
-  ContainsString20:
-    Type: String
-    Description: A String that must appear in the message in order for SlackUrl20 to be used.
   OnlySendLogMessage:
     Type: String
     Default: 'False'
     Description: By default, this applicaiton will send the log message, id, and timestamp, unless this is set to True
     AllowedValues: ['True','False']
+  SlackUrl01:
+    Default: ''
+    Description: Webhook URL for integration with Slack (using ContainsString01)
+    Type: String
+  ContainsString01:
+    Default: ''
+    Type: String
+    Description: A String that must appear in the message in order for SlackUrl01 to be used.
+  SlackUrl02:
+    Default: ''
+    Description: Webhook URL for integration with Slack (using ContainsString02)
+    Type: String
+  ContainsString02:
+    Default: ''
+    Type: String
+    Description: A String that must appear in the message in order for SlackUrl02 to be used.
+  SlackUrl03:
+    Default: ''
+    Description: Webhook URL for integration with Slack (using ContainsString03)
+    Type: String
+  ContainsString03:
+    Default: ''
+    Type: String
+    Description: A String that must appear in the message in order for SlackUrl03 to be used.
+  SlackUrl04:
+    Default: ''
+    Description: Webhook URL for integration with Slack (using ContainsString04)
+    Type: String
+  ContainsString04:
+    Default: ''
+    Type: String
+    Description: A String that must appear in the message in order for SlackUrl04 to be used.
+  SlackUrl05:
+    Default: ''
+    Description: Webhook URL for integration with Slack (using ContainsString05)
+    Type: String
+  ContainsString05:
+    Default: ''
+    Type: String
+    Description: A String that must appear in the message in order for SlackUrl05 to be used.
 
 Resources:
   cwlogstolambda:
@@ -182,52 +102,22 @@ Resources:
     Properties:
       Location:
         ApplicationId: arn:aws:serverlessrepo:us-west-2:444108974876:applications/macnoms-lambda-to-slack
-        SemanticVersion: 0.0.3
+        SemanticVersion: 0.0.5
       Parameters: 
         # Log level for Lambda function logging, e.g., ERROR, INFO, DEBUG, etc
         LogLevel: !Ref LogLevel
         # Webhook URL for integration with Slack
         SlackUrl: !Ref SlackUrl
-        SlackUrl1: !Ref SlackUrl1
-        ContainsString1: !Ref ContainsString1
-        SlackUrl1: !Ref SlackUrl2
-        ContainsString1: !Ref ContainsString2
-        SlackUrl1: !Ref SlackUrl3
-        ContainsString1: !Ref ContainsString3
-        SlackUrl1: !Ref SlackUrl4
-        ContainsString1: !Ref ContainsString4
-        SlackUrl1: !Ref SlackUrl5
-        ContainsString1: !Ref ContainsString5
-        SlackUrl1: !Ref SlackUrl6
-        ContainsString1: !Ref ContainsString6
-        SlackUrl1: !Ref SlackUrl7
-        ContainsString1: !Ref ContainsString7
-        SlackUrl1: !Ref SlackUrl8
-        ContainsString1: !Ref ContainsString8
-        SlackUrl1: !Ref SlackUrl9
-        ContainsString1: !Ref ContainsString9
-        SlackUrl1: !Ref SlackUrl10
-        ContainsString1: !Ref ContainsString10
-        SlackUrl1: !Ref SlackUrl11
-        ContainsString1: !Ref ContainsString11
-        SlackUrl1: !Ref SlackUrl12
-        ContainsString1: !Ref ContainsString12
-        SlackUrl1: !Ref SlackUrl13
-        ContainsString1: !Ref ContainsString13
-        SlackUrl1: !Ref SlackUrl14
-        ContainsString1: !Ref ContainsString14
-        SlackUrl1: !Ref SlackUrl15
-        ContainsString1: !Ref ContainsString15
-        SlackUrl1: !Ref SlackUrl16
-        ContainsString1: !Ref ContainsString16
-        SlackUrl1: !Ref SlackUrl17
-        ContainsString1: !Ref ContainsString17
-        SlackUrl1: !Ref SlackUrl18
-        ContainsString1: !Ref ContainsString18
-        SlackUrl1: !Ref SlackUrl19
-        ContainsString1: !Ref ContainsString19
-        SlackUrl1: !Ref SlackUrl20
-        ContainsString1: !Ref ContainsString20
+        SlackUrl01: !Ref SlackUrl01
+        ContainsString01: !Ref ContainsString01
+        SlackUrl02: !Ref SlackUrl02
+        ContainsString02: !Ref ContainsString02
+        SlackUrl03: !Ref SlackUrl03
+        ContainsString03: !Ref ContainsString03
+        SlackUrl04: !Ref SlackUrl04
+        ContainsString04: !Ref ContainsString04
+        SlackUrl05: !Ref SlackUrl05
+        ContainsString05: !Ref ContainsString05
 
 
 Outputs:
