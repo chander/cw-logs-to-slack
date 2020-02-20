@@ -1,6 +1,8 @@
 MIT License
 
-Copyright (c) 2019 Keeton Hodgson / Chander Ganesan (changes for multiple slack channels)
+Copyright (c) 2019 Keeton Hodgson
+Copyright (c) 2020 Chander Ganesan (changes for multiple slack channels
+                                    based on the original code by Keeton Hodgson)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

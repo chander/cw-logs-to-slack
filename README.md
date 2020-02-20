@@ -1,15 +1,18 @@
 # cw-logs-to-slack
 
-This serverless app publishes AWS CloudWatch logs to Slack based on a subscription filter.
+This serverless app publishes AWS CloudWatch logs to Slack based on a subscription filter.  This differs from Keeton Hodgson's by 
+using a different lamda-to-slack mechanism that allows for basic text comparison to determine the webhook to use.  This is
+useful in the case that you want to split slack data out based on different text that might appear (for example,
+send DEBUG output to one channel, and ERROR output to another.)
 
 ## App Architecture
 
-![App Architecture](https://github.com/keetonian/cw-logs-to-slack/raw/master/images/cw-logs-to-slack.png)
+![App Architecture](https://github.com/chander/otg-cw-logs-to-slack/raw/master/images/cw-logs-to-slack.png)
 
 ## Installation Instructions
 
 1. [Create an AWS account](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html) if you do not already have one and login
-1. Go to the app's page on the [Serverless Application Repository](https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-east-1:289559741701:applications~cw-logs-to-slack) and click "Deploy"
+1. Go to the app's page on the [Serverless Application Repository](https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-west-2:444108974876:applications~otg-cw-logs-to-slack) and click "Deploy"
 1. Provide the required app parameters (see parameter details below) and click "Deploy"
 
 ### Slack Url
@@ -35,6 +38,17 @@ CloudWatch logs allow you to filter logs based on a pattern. For more informatio
 1. `FilterPattern` (optional) - Pattern for filtering log events. Default: ERROR
 1. `OnlySendLogMessage` (optional) - Option to only send log message instead of all message, id, and timestamp information. Default: False. Values: False, True
 1. `LogLevel` (optional) - Log level for Lambda function logging, e.g., ERROR, INFO, DEBUG, etc. Default: INFO
+1. `SlackUrl01` (optional) - Webhook URL for integration with Slack (if messages match ContainsString01)
+1. `ContainsString01` (optional) - A string that, if present in the message, dictates that the message should be logged to SlackUrl01
+1. `SlackUrl02` (optional) - Webhook URL for integration with Slack (if messages match ContainsString02)
+1. `ContainsString02` (optional) - A string that, if present in the message, dictates that the message should be logged to SlackUrl02
+1. `SlackUrl03` (optional) - Webhook URL for integration with Slack (if messages match ContainsString03)
+1. `ContainsString03` (optional) - A string that, if present in the message, dictates that the message should be logged to SlackUrl03
+1. `SlackUrl04` (optional) - Webhook URL for integration with Slack (if messages match ContainsString04)
+1. `ContainsString04` (optional) - A string that, if present in the message, dictates that the message should be logged to SlackUrl04
+1. `SlackUrl05` (optional) - Webhook URL for integration with Slack (if messages match ContainsString05)
+1. `ContainsString05` (optional) - A string that, if present in the message, dictates that the message should be logged to SlackUrl05
+
 
 ## App Outputs
 
